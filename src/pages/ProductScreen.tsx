@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { Product } from '../components/Product'
 import { candleProducts } from '../mocks/candle.mock'
 import { Candle } from '../interfaces/candle.interface'
@@ -14,17 +14,8 @@ const whatever = (x: Candle) => (
   </div>
 )
 
-// const getAllSelectedProductsQuantity = (
-//   allSelectedProducts: Map<string, number>
-// ) => Object.values(allSelectedProducts).reduce((acc, curr) => acc + curr, 0)
-
 function ProductScreen() {
   const total = useProductStore((x) => x.total)
-  //   const totalQuantity = useRef(0)
-
-  //   useEffect(() => {
-  //     totalQuantity.current = getAllSelectedProductsQuantity(allSelectedProducts)
-  //   })
 
   return (
     <div className="bg-primary overflow-scroll flex flex-col justify-center relative">
