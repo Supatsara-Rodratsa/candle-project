@@ -2,8 +2,6 @@ import React from 'react'
 import { Button } from '../components/Button'
 import image from '../assets/img/image.png'
 import { useNavigate } from 'react-router-dom'
-import { useProductStore } from '../stores/productStore'
-import { string } from 'prop-types'
 
 function App() {
   const navigate = useNavigate()
