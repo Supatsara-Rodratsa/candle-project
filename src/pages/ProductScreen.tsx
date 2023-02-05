@@ -20,7 +20,7 @@ function ProductScreen() {
   return (
     <div className="bg-primary overflow-scroll flex flex-col justify-center relative">
       <h1
-        data-testId="header"
+        data-testid="header"
         className="text-[40px] py-14 w-full text-center font-medium"
       >
         Candle Products
