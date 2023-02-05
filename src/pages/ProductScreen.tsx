@@ -5,12 +5,12 @@ import { Candle } from '../interfaces/candle.interface'
 import { useProductStore } from '../stores/productStore'
 import { Cart } from '../components/Cart'
 
-const whatever = (x: Candle) => (
+const renderProductItem = (product: Candle) => (
   <div
-    key={x.name}
+    key={product.name}
     className="flex flex-col justify-center items-center relative mb-10"
   >
-    <Product {...x} />
+    <Product {...product} />
   </div>
 )
 
@@ -19,11 +19,14 @@ function ProductScreen() {
 
   return (
     <div className="bg-primary overflow-scroll flex flex-col justify-center relative">
-      <h1 className="text-[40px] py-14 w-full text-center font-medium">
+      <h1
+        data-testId="header"
+        className="text-[40px] py-14 w-full text-center font-medium"
+      >
         Candle Products
       </h1>
       <div className="flex flex-wrap gap-5 justify-center">
-        {candleProducts.map(whatever)}
+        {candleProducts.map(renderProductItem)}
       </div>
       <div className="fixed bottom-10 right-10">
         <Cart totalProducts={total}></Cart>

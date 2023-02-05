@@ -8,10 +8,14 @@ function App() {
   return (
     <div className="bg-primary h-screen flex justify-center items-center overflow-hidden relative">
       <div className="absolute top-[30%] flex flex-col gap-10 items-center">
-        <h1 className="flex font-bold text-[40px] text-darkBrown">
+        <h1
+          data-testid="header-brand"
+          className="flex font-bold text-[40px] text-darkBrown"
+        >
           Scented Candle
         </h1>
         <Button
+          data-testid="view-product"
           title={'View Products'}
           onClick={() => navigate('/product')}
         ></Button>

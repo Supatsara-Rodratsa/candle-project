@@ -21,15 +21,17 @@ export const Product = (product: Candle) => {
       </div>
       <div className="flex justify-center items-center gap-2 pt-8">
         <div
+          data-testid="remove-item"
           className="flex justify-center items-center p-1 border rounded-full w-[28px] text-[18px] h-[28px] cursor-pointer"
           onClick={() => removeItem(product.name)}
         >
           -
         </div>
-        <p className="px-2 text-[18px]">
+        <p data-testid="count-item" className="px-2 text-[18px]">
           {allSelectedProducts.get(product.name) || 0}
         </p>
         <div
+          data-testid="add-item"
           className="flex justify-center items-center p-1 rounded-full w-[28px] h-[28px] text-[18px] cursor-pointer bg-darkBrown text-white font-bold"
           onClick={() => addItem(product.name)}
         >
