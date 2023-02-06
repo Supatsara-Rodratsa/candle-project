@@ -2,6 +2,11 @@ import { renderHook, cleanup, act } from '@testing-library/react'
 import { useProductStore } from '../../stores/productStore'
 
 afterEach(cleanup)
+beforeEach(() => {
+  const { result } = renderHook(() => useProductStore())
+  result.current.reset()
+})
+
 describe('Test Stores', () => {
   it('Should init total selected product as 0', () => {
     const { result } = renderHook(() => useProductStore())
@@ -18,6 +23,11 @@ describe('Test Stores', () => {
 
   it('Should be able to decrease product', () => {
     const { result } = renderHook(() => useProductStore())
+    expect(result.current.total).toBe(0)
+    act(() => {
+      result.current.addItem('product')
+    })
+    expect(result.current.total).toBe(1)
     act(() => {
       result.current.removeItem('product')
     })

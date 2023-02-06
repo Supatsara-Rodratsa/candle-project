@@ -5,6 +5,7 @@ type ProductStoreType = {
   total: number
   addItem: (name: string) => void
   removeItem: (name: string) => void
+  reset: () => void
 }
 
 export const useProductStore = create<ProductStoreType>((set) => ({
@@ -41,4 +42,7 @@ export const useProductStore = create<ProductStoreType>((set) => ({
       }
     })
   },
+
+  reset: () =>
+    set({ allSelectedProducts: new Map<string, number>(), total: 0 }),
 }))
