@@ -9,5 +9,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        id: coverage
+        with:
+            output: report-markdown
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+            message: ${{ steps.coverage.outputs.report }}
       - run: npm install
       - run: npm run lint
