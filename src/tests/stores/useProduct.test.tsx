@@ -1,10 +1,12 @@
-import { renderHook, cleanup, act } from '@testing-library/react'
+import { renderHook, cleanup, act, waitFor } from '@testing-library/react'
 import { useProductStore } from '../../stores/productStore'
 
 afterEach(cleanup)
-beforeEach(() => {
-  const { result } = renderHook(() => useProductStore())
-  result.current.reset()
+beforeEach(async () => {
+  await waitFor(() => {
+    const { result } = renderHook(() => useProductStore())
+    result.current.reset()
+  })
 })
 
 describe('Test Stores', () => {
