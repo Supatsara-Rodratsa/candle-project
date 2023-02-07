@@ -1,0 +1,13 @@
+name: running test coverage
+run-name: testing test coverage
+on: [push]
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v3
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npm test
