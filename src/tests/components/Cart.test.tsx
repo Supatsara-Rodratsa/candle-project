@@ -6,7 +6,6 @@ const makeSut = (props: Partial<CartProps>) => {
   return render(<Cart totalProducts={1} onClick={jest.fn()} {...props} />)
 }
 
-7
 afterEach(cleanup)
 describe('Cart Component', () => {
   it('Should render total product if total product is greater than 0', () => {

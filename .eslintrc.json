@@ -23,7 +23,6 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "no-unused-vars": "off",
-    "no-undef": "off",
     "react/prop-types": "off",
     "@typescript-eslint/no-explicit-any": "off"
   },
