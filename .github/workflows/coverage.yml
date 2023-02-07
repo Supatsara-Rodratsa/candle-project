@@ -12,9 +12,10 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
-            output: report-markdown
+          output: report-markdown
+          test-script: npm run test
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
-            message: ${{ steps.coverage.outputs.report }}
+          message: ${{ steps.coverage.outputs.report }}
       - run: npm install
       - run: npm test
