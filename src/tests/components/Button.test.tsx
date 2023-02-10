@@ -6,7 +6,6 @@ const makeSut = (props: Partial<ButtonProps>) => {
   return render(<Button title="test" onClick={jest.fn()} {...props} />)
 }
 
-7
 afterEach(cleanup)
 describe('Button Component', () => {
   test('Should render label correctly', () => {
