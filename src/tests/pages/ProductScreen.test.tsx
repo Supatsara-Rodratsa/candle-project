@@ -2,7 +2,6 @@ import React from 'react'
 import { render, screen, cleanup, within } from '@testing-library/react'
 import ProductScreen from '../../pages/ProductScreen'
 
-7
 afterEach(cleanup)
 describe('Test Product screen', () => {
   render(<ProductScreen />)

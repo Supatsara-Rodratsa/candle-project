@@ -8,7 +8,6 @@ const makeSut = (props?: Partial<Candle>) => {
   return render(<Product name="test" price={100} image="img" {...props} />)
 }
 
-7
 afterEach(cleanup)
 describe('Product Component', () => {
   beforeEach(() =>

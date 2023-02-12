@@ -8,7 +8,6 @@ import React from 'react'
 import { render, screen, cleanup, within } from '@testing-library/react'
 import App from '../../pages/App'
 
-7
 afterEach(cleanup)
 describe('Test main screen', () => {
   render(<App />)
